@@ -1,45 +1,60 @@
-def physics_and_maths_operations_option():
-    print("\nphysics and maths operations option:")
-    print("a. area of rectangle ")
-    print("b. heat capacity ")
-    print("c. volume of cone ")
-    print("d. kinetic energy ")
-    print("e. potential energy ")
+def velocity():
+    print("Calculating velocity...")
+    distance = float(input("Enter distance (m): "))
+    time = float(input("Enter time (s): "))
+    print(f"Velocity = {distance / time} m/s")
 
 
-physics_and_maths_operations_option()
-options =input("pick an option from a to e")
-if options == 'a':
+def force():
+    print("Calculating force...")
+    mass = float(input("Enter mass (kg): "))
+    acceleration = float(input("Enter acceleration (m/s²): "))
+    print(f"Force = {mass * acceleration} N")
 
-    breath = int(input("enter breath of rectangle  "))
-    length = int(input("enter height of rectangle  "))
-    area_of_rectangle = breath * length
-    print(area_of_rectangle)
-    
-elif options == 'b':
-    mass = int(input("Enter mass of object  "))
-    specific_heat_capacity = int(input("enter specific heat capacity of object "))
-    change_in_temperature = int(input("enter change in temperature of object "))
-    heat_capacity = mass * specific_heat_capacity * change_in_temperature
-    print(heat_capacity)
 
-elif options == 'c':
-    radius = int(input("enter radius of the cone  "))
-    height = int(input("enter height of the cone  "))
-    volume_of_cone = 1/3 * 3.142 * radius**2 * height
-    print(volume_of_cone)
+def kinetic_energy():
+    print("Calculating kinetic energy...")
+    mass = float(input("Enter mass (kg): "))
+    velocity = float(input("Enter velocity (m/s): "))
+    print(f"Kinetic Energy = {0.5 * mass * velocity ** 2} J")
 
-elif options == 'd':
-    mass = int(input("enter mass number  "))
-    velocity = int(input("enter velocity of the object  "))
-    kinetic_energy= 0.5 * mass * velocity**2
-    print(kinetic_energy)
 
-elif options == 'e':
-    mass = int(input("enter the mass of the PE  "))
-    gravity = int(input("enter the acceleration due gravity of the PE  "))
-    height = int(input("enter the height of the PE  "))
-    potential_energy = mass * gravity * height
-    print(potential_energy)
-else :
-    print("invalid option selected")
+def potential_energy():
+    print("Calculating potential energy...")
+    mass = float(input("Enter mass (kg): "))
+    height = float(input("Enter height (m): "))
+    gravity = 9.8  # acceleration due to gravity
+    print(f"Potential Energy = {mass * gravity * height} J")
+
+
+def power():
+    print("Calculating power...")
+    work = float(input("Enter work done (J): "))
+    time = float(input("Enter time taken (s): "))
+    print(f"Power = {work / time} W")
+
+
+def main():
+    print("Choose a physics operation:")
+    print("a. Velocity")
+    print("b. Force")
+    print("c. Kinetic Energy")
+    print("d. Potential Energy")
+    print("e. Power")
+
+    choice = input("Enter your choice (a-e): ").lower()
+    if choice == 'a':
+        velocity()
+    elif choice == 'b':
+        force()
+    elif choice == 'c':
+        kinetic_energy()
+    elif choice == 'd':
+        potential_energy()
+    elif choice == 'e':
+        power()
+    else:
+        print("Invalid choice. Please enter a valid option.")
+
+
+# Call the main function to start the program
